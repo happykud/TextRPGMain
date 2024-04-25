@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kyhaa\\source\\repos\\TextRPG\\TextRPG\\TextRPG.csproj",
+      "projectUniqueName": "C:\\Users\\kyhaa\\OneDrive\\문서\\GitHub\\TextRPG\\TextRPG\\TextRPG.csproj",
       "projectName": "TextRPG",
-      "projectPath": "C:\\Users\\kyhaa\\source\\repos\\TextRPG\\TextRPG\\TextRPG.csproj",
+      "projectPath": "C:\\Users\\kyhaa\\OneDrive\\문서\\GitHub\\TextRPG\\TextRPG\\TextRPG.csproj",
       "packagesPath": "C:\\Users\\kyhaa\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kyhaa\\source\\repos\\TextRPG\\TextRPG\\obj\\",
+      "outputPath": "C:\\Users\\kyhaa\\OneDrive\\문서\\GitHub\\TextRPG\\TextRPG\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\kyhaa\\AppData\\Roaming\\NuGet\\NuGet.Config",

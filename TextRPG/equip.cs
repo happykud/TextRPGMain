@@ -138,15 +138,13 @@ namespace TextRPG
                     Console.Clear();
                     Console.WriteLine("잘못 입력하셨습니다.");
                 }
-                else if (playerGold > foundItem.price)
+                else
                 {
                     Console.Clear();
                     equipSell(foundItem);
-                    playerGold = playerGold + foundItem.price;
-                    gamePlay.SetPlayerGold(playerGold);
+                    gamePlay.SellGold(foundItem.price);
                     Console.WriteLine("{0} 판매 완료!", foundItem.name);
                 }
-
             }
         }
 
@@ -203,8 +201,7 @@ namespace TextRPG
                     Console.Clear();
                     equipBuy(foundItem);
                     foundItem.IsBuy = true;
-                    playerGold = playerGold - foundItem.price;
-                    gamePlay.SetPlayerGold(playerGold); // 동작 안함
+                    gamePlay.BuyGold(foundItem.price);
                     Console.WriteLine("{0} 구매 완료!", foundItem.name);
                 }
                 else

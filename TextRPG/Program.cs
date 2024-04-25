@@ -29,17 +29,16 @@ namespace TextRPG
         shop shop = new shop();
         Inventory inventory = new Inventory();
 
-        public int[] playerStasts = new int[8];
-        public int[] playerElement = new int[2];
+        public static int[] playerStasts = new int[8];
+        public static int[] playerElement = new int[2];
 
-        public int Testint()
+        public void SellGold(int gold)
         {
-            return playerElement[0];
+            playerElement[0] += gold;
         }
-
-        public void SetPlayerGold(int gold)
+        public void BuyGold(int gold)
         {
-            playerElement[0] = gold;
+            playerElement[0] -= gold;
         }
 
         public void NewGameStart()
@@ -189,7 +188,7 @@ namespace TextRPG
                     }
                     break;
                 case 112233:
-                    cheat(playerElement);
+                    TextCheat(playerElement);
                     if (system.OutMenu() == 0)
                     {
                         Console.Clear();
@@ -262,8 +261,9 @@ namespace TextRPG
 
         }
 
-        public void cheat(int[] ints)
+        public void TextCheat(int[] ints)
         {
+            playerElement[0] += 99999;
             Console.WriteLine("치트 성공!");
         }
     }
