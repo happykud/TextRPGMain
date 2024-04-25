@@ -56,8 +56,20 @@ namespace TextRPG
         public int[] element = new int[2];
         public string chad;
         public string name;
-        public int addPower;
-        public int addDefense;
+        public static int addPower;
+        public static int addDefense;
+
+        public void addStasts(int addstasts, int stastsType)
+        {
+            if(stastsType == 1)
+            {
+                addPower += addstasts;
+            }
+            else
+            {
+                addDefense += addstasts;
+            }
+        }
 
         public void PlayerStastsSet(int level, int Exp, int hp, int mp, int power, int defense, int evasion, int accuracy, string jop)
         {
@@ -99,10 +111,32 @@ namespace TextRPG
             Console.WriteLine("{0}: {1}", (Stasts)1, playerStasts[1]);
             for (int i = 2; i < stasts.Length; i++)
             {
-                if(i == 4 || i == 5) // 장비 장착 시 스텟
+                if(i == 4) // 장비 장착 시 스텟
                 {
-                    Console.WriteLine("------------");
-                    Console.WriteLine("{0}: {1}", (Stasts)i, playerStasts[i]);
+                    if(addPower != 0)
+                    {
+                        Console.WriteLine("------------");
+                        Console.WriteLine("{0}: {1}  (+{2})", (Stasts)i, playerStasts[i], addPower);
+                    }
+                    else
+                    {
+                        Console.WriteLine("------------");
+                        Console.WriteLine("{0}: {1}", (Stasts)i, playerStasts[i]);
+                    }
+
+                }
+                else if(i == 5)
+                {
+                    if (addDefense != 0)
+                    {
+                        Console.WriteLine("------------");
+                        Console.WriteLine("{0}: {1}  (+{2})", (Stasts)i, playerStasts[i], addDefense);
+                    }
+                    else
+                    {
+                        Console.WriteLine("------------");
+                        Console.WriteLine("{0}: {1}", (Stasts)i, playerStasts[i]);
+                    }
                 }
                 else
                 {

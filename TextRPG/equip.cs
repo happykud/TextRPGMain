@@ -75,6 +75,7 @@ namespace TextRPG
         public void Equips(int equipsId)
         {
             GamePlay gamePlay = new GamePlay();
+            Player player = new Player(); 
             equip foundItem = inventoryEquipList.Find(x => x.equipId == equipsId);
             equipEquipList.Add(foundItem);
             inventoryEquipList.Remove(foundItem);
@@ -82,10 +83,12 @@ namespace TextRPG
 
             if (foundItem.effectType == EffectType.공격력)
             {
+                player.addStasts(foundItem.effect, 1);
                 gamePlay.SetEquip(foundItem.effect, 4);
             }
             else
             {
+                player.addStasts(foundItem.effect, 2);
                 gamePlay.SetEquip(foundItem.effect, 5);
             }
             Console.Clear();
