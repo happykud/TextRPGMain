@@ -41,6 +41,11 @@ namespace TextRPG
             playerElement[0] -= gold;
         }
 
+        public void SetEquip(int addStasts, int stastsIndex)
+        {
+            playerStasts[stastsIndex] += addStasts;
+        }
+
         public void NewGameStart()
         {
             Console.WriteLine("------------------------------------------------------");
@@ -118,6 +123,7 @@ namespace TextRPG
             switch (playerAction)
             {
                 case 1:
+                    Console.Clear();
                     player.StastsCheck(playerStasts);
                     player.ElementCheck(playerElement);
                     Console.WriteLine();

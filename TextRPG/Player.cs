@@ -56,6 +56,8 @@ namespace TextRPG
         public int[] element = new int[2];
         public string chad;
         public string name;
+        public int addPower;
+        public int addDefense;
 
         public void PlayerStastsSet(int level, int Exp, int hp, int mp, int power, int defense, int evasion, int accuracy, string jop)
         {
@@ -82,16 +84,12 @@ namespace TextRPG
            
             Inventory inventory = new Inventory();
             List<equip> equipList = inventory.GetEquipsList();
-            int addPower;
-            int addDefense;
+            
 
             foreach (equip equip in equipList)
             {
                 
             }
-
-            
-
 
             Console.WriteLine("■■■캐릭터 정보■■■");
             Console.WriteLine("------------");

@@ -59,6 +59,7 @@ namespace TextRPG
     {
         public static List<equip> inventoryEquipList = new List<equip>();
         public static List<equip> equipEquipList = new List<equip> ();
+        //GamePlay gamePlay1 = new GamePlay ();
 
 
         public List<equip> GetInventoryEquipsList()
@@ -73,9 +74,22 @@ namespace TextRPG
 
         public void Equips(int equipsId)
         {
+            GamePlay gamePlay = new GamePlay();
             equip foundItem = inventoryEquipList.Find(x => x.equipId == equipsId);
-            //if(equipEquipList = foundItem) //장착 아이템에 포함이 되어 있는지 체크 하려 했는데 안됨
             equipEquipList.Add(foundItem);
+            inventoryEquipList.Remove(foundItem);
+
+
+            if (foundItem.effectType == EffectType.공격력)
+            {
+                gamePlay.SetEquip(foundItem.effect, 4);
+            }
+            else
+            {
+                gamePlay.SetEquip(foundItem.effect, 5);
+            }
+            Console.Clear();
+            Console.WriteLine("{0} 장착 완료!", foundItem.name);
         }
     }
 
@@ -100,7 +114,7 @@ namespace TextRPG
             shopEquipsList.Add(new equip(6, "스파르타의 가호를 받은 지팡이", Type.무기, Taer.유니크, EffectType.공격력, 42, 118, false));
             shopEquipsList.Add(new equip(7, "낡은 갑옷", Type.방어구, Taer.커먼, EffectType.방어력, 5, 5, false));
             shopEquipsList.Add(new equip(8, "새련된 갑옷", Type.방어구, Taer.레어, EffectType.방어력, 18, 25, false));
-            shopEquipsList.Add(new equip(9, "스파르탄의 갑옷", Type.방어구, Taer.유니크, EffectType.방어력, 99999, 999999999, false));
+            shopEquipsList.Add(new equip(9, "전설의 스파르탄 갑옷", Type.방어구, Taer.유니크, EffectType.방어력, 99999, 999999999, false));
         }
 
         public List<equip> GetShopEquipsList()
